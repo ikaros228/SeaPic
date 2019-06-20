@@ -37,20 +37,20 @@ namespace SeaPic
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (menuButtonFlag && MenuStackPanel.Height <= 55)
+            if (menuButtonFlag && MenuStackPanel.Height <= 55 && e.ChangedButton == MouseButton.Left)
             {
                 DoubleAnimation da = new DoubleAnimation();
-                da.From = 50;
-                da.To = 871;
+                da.From = 40;
+                da.To = 900;
                 da.Duration = TimeSpan.FromSeconds(0.5);
                 MenuStackPanel.BeginAnimation(StackPanel.HeightProperty, da);
                 menuButtonFlag = false;
             }
-            else if (MenuStackPanel.Height >= 865)
-            {
+            else if (MenuStackPanel.Height >= 865 && e.ChangedButton == MouseButton.Left)
+            { 
                 DoubleAnimation da1 = new DoubleAnimation();
                 da1.From = MenuStackPanel.ActualHeight;
-                da1.To = 50;
+                da1.To = 40;
                 da1.Duration = TimeSpan.FromSeconds(0.5);
                 MenuStackPanel.BeginAnimation(StackPanel.HeightProperty, da1);
                 menuButtonFlag = true;
@@ -59,7 +59,26 @@ namespace SeaPic
 
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            Environment.Exit(0);
+            if (e.ChangedButton == MouseButton.Left)
+                Environment.Exit(0);
+        }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+        private void Cross_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                Environment.Exit(0);
+        }
+
+        private void Minim_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                WindowState = WindowState.Minimized;
         }
     }
 }

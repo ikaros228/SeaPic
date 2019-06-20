@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SeaPic"
         mc:Ignorable="d"
-        WindowStyle="SingleBorderWindow"
-        AllowsTransparency="False"
+        WindowStyle="None"
+        AllowsTransparency="True"
         Icon="Images/Icon_1.png"
         Title="Hello!" Height="900" Width="1600" ResizeMode="CanMinimize">
     <Grid Name="MGrid">
-        <StackPanel Background="{StaticResource UImenuBGBrush}" HorizontalAlignment="Right" Width="200" Name="MenuStackPanel" Height="868" VerticalAlignment="Top" Margin="0,0,0,0">
-            <Border Height="50" Style="{StaticResource UImButton}" MouseDown="Border_MouseDown">
-                <Image x:Name="UImIconImg" Source="Images/UImIcon.png" Stretch="None" Margin="0,0,0,0" />
+        <StackPanel Background="{StaticResource UImenuBGBrush}" HorizontalAlignment="Right" Width="200" Name="MenuStackPanel" Margin="0,0,1400,0" Height="900" VerticalAlignment="Top">
+            <Border Height="40" Style="{StaticResource UImButton}" MouseDown="Border_MouseDown">
+                <Image x:Name="UImIconImg" Source="Images/UImIcon.png" Margin="88,10" HorizontalAlignment="Center" Width="24" Stretch="Fill" />
             </Border>
             <Border Height="50" Style="{StaticResource UImButton}" Margin="0,250,0,0">
                 <Label x:Name="FirstLab" Foreground="White" FontSize="30" Content="Library" HorizontalContentAlignment="Center"/>
@@ -27,6 +27,12 @@
                 <Label x:Name="ForthLab" Foreground="White" FontSize="30" Content="Exit" HorizontalContentAlignment="Center"/>
             </Border>
         </StackPanel>
-        <Rectangle Fill="#FF6AAEC7" Height="50" VerticalAlignment="Top" Panel.ZIndex="-1"/>
+        <Rectangle Fill="{StaticResource UImenuBGBrush}" Height="40" VerticalAlignment="Top" Panel.ZIndex="-1" MouseDown="Rectangle_MouseDown"/>
+        <Border Style="{StaticResource UImButton}" Margin="1560,0,0,860" >
+            <Image x:Name="cross" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Source="Images/CrossIcon.png" MouseDown="Cross_MouseDown" Margin="0,0,0,0" RenderTransformOrigin="-4.625,0.55"/>
+        </Border>
+        <Border Style="{StaticResource UImButton}" Margin="1520,0,40,860">
+            <Image x:Name="minim" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Source="Images/minimizeIcon.png" MouseDown="Minim_MouseDown"/>
+        </Border>
     </Grid>
 </Window>
