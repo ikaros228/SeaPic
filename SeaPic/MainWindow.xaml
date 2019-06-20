@@ -1,0 +1,32 @@
+﻿<Window x:Class="SeaPic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SeaPic"
+        mc:Ignorable="d"
+        WindowStyle="SingleBorderWindow"
+        AllowsTransparency="False"
+        Icon="Images/Icon_1.png"
+        Title="Hello!" Height="900" Width="1600" ResizeMode="CanMinimize">
+    <Grid Name="MGrid">
+        <StackPanel Background="{StaticResource UImenuBGBrush}" HorizontalAlignment="Right" Width="200" Name="MenuStackPanel" Height="868" VerticalAlignment="Top" Margin="0,0,0,0">
+            <Border Height="50" Style="{StaticResource UImButton}" MouseDown="Border_MouseDown">
+                <Image x:Name="UImIconImg" Source="Images/UImIcon.png" Stretch="None" Margin="0,0,0,0" />
+            </Border>
+            <Border Height="50" Style="{StaticResource UImButton}" Margin="0,250,0,0">
+                <Label x:Name="FirstLab" Foreground="White" FontSize="30" Content="Library" HorizontalContentAlignment="Center"/>
+            </Border>
+            <Border Height="50" Style="{StaticResource UImButton}" Margin="0,10,0,0">
+                <Label x:Name="SecondLab" Foreground="White" FontSize="30" Content="Settings" Margin="0,0,0,0" HorizontalContentAlignment="Center"/>
+            </Border>
+            <Border Height="50" Style="{StaticResource UImButton}" Margin="0,10,0,0">
+                <Label x:Name="ThirdLab" Foreground="White" FontSize="30" Content="About" Margin="0,0,0,0" HorizontalContentAlignment="Center"/>
+            </Border>
+            <Border Height="50" Style="{StaticResource UImButton}" Margin="0,10,0,0" MouseDown="Border_MouseDown_1">
+                <Label x:Name="ForthLab" Foreground="White" FontSize="30" Content="Exit" HorizontalContentAlignment="Center"/>
+            </Border>
+        </StackPanel>
+        <Rectangle Fill="#FF6AAEC7" Height="50" VerticalAlignment="Top" Panel.ZIndex="-1"/>
+    </Grid>
+</Window>
